@@ -1,0 +1,32 @@
+#logo_container {
+  text-align: center;
+  background-color: #2c3e50;
+  padding: 15px 0;
+
+  h1 {
+    margin: 0px;
+  }
+}
+
+#comic-wall-logo {
+  color: #eee;
+  font-size: 42px;
+  font-family: 'Bangers';
+
+  &:hover {
+    text-decoration: none;
+    color: #dadfe1;
+  }
+}
+
+#top-navbar-custom {
+  border-radius: 0;
+  background-color: #000;
+  border: 0;
+}
+
+.navigation-buttons {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}

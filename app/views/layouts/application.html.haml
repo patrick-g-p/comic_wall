@@ -1,0 +1,25 @@
+!!! 5
+%html(lang="en-US")
+  %head
+    %title Comic Wall
+    %meta(charset="UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = csrf_meta_tag
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Bangers|Droid+Sans"
+    = javascript_include_tag "application"
+  %body
+    #wrapper
+      %header
+        = render 'shared/header'
+      %main#content-area
+        = render 'shared/flash_messages'
+        = yield
+      %footer#sticky-footer
+        .pull-left.comicy-text
+          &copy
+          = "#{Time.now.year} Comic Wall"
+        .pull-right
+          =link_to "https://github.com/patrick-g-pavesi/comic_wall", class: 'comicy-text' do
+            Source < > on
+            %i.fa.fa-github
