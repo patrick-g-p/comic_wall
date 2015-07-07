@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "Welcome to The Avengers errr Comic Wall #{@user.full_name.titleize}. Your account was created!"
       redirect_to root_path
     else
