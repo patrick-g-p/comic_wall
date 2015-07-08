@@ -1,0 +1,17 @@
+.row
+  .col-md-6.col-md-offset-1#discussion-header
+    %h2.comicy-text
+      = @comic.title
+      .pull-right
+        =link_to "Back to Discussion List", comic_path(@comic)
+    %h3
+      = @discussion.title
+      %br
+    %small
+      Posted By -
+      = link_to "#{@discussion.creator.full_name}", user_path(@discussion.creator)
+    %p= @discussion.body
+.row
+  .col-md-6.col-md-offset-1.well#reply_area
+    %h4 Replies:
+    -# add replies after specs and implementation is written

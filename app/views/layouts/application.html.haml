@@ -1,7 +1,7 @@
 !!! 5
 %html(lang="en-US")
   %head
-    %title Comic Wall - 'With great comics comes great discussion.'
+    %title Discuss and Discover Comics - Comic Wall
     %meta(charset="UTF-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     = csrf_meta_tag
@@ -13,8 +13,9 @@
       %header
         = render 'shared/header'
       %main#content-area
-        = render 'shared/flash_messages'
-        = yield
+        .container-fluid
+          = render 'shared/flash_messages'
+          = yield
       %footer#sticky-footer
         .pull-left.comicy-text
           = link_to '#comic-wall-logo', class: 'comicy-text', title: 'Jump back to the top!' do

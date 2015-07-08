@@ -2,8 +2,21 @@
   .col-md-6.col-md-offset-3.centered
     %h1.comicy-text= "#{@comic.title} ##{@comic.issue_number}"
     = image_tag @comic.cover_art_url, class: 'comic-cover-lg'
-    - if logged_in?
-      %p=link_to 'Start a new discussion?', '#'
 .row
   .col-md-6.col-md-offset-3.centered
-    %h2 Discussions and stuff!
+    - if logged_in?
+      %h2=link_to 'Begin A Discussion', new_comic_discussion_path(@comic)
+  .col-md-6.col-md-offset-3.well#discussion-container
+    - if @comic_discussions
+      %ul#discussion-list
+        -@comic_discussions.each do |discussion|
+          %li
+            %h3
+              = link_to "#{discussion.title}", comic_discussion_path(@comic, discussion)
+              -# todo: total replies here
+            %small
+              Posted By -
+              = link_to "#{discussion.creator.full_name}", user_path(discussion.creator)
+              = "on #{discussion.created_at}"
+    - else
+      %h3 No discussions yet! Post the first one!

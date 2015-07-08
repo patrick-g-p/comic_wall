@@ -2,7 +2,18 @@ require 'spec_helper'
 
 describe ComicsController do
   describe 'GET index' do
-    # TODO: test when creating comic functionality is completed
+    before(:each) do
+      8.times {Fabricate(:comic)}
+      get :index
+    end
+
+    it 'sets the comics variable' do
+      expect(assigns(:comics)).to_not be_nil
+    end
+
+    it 'has 8 objects in the comics varaible' do
+      expect(assigns(:comics).count).to eq(8)
+    end
   end
 
   describe 'GET show' do
@@ -11,6 +22,11 @@ describe ComicsController do
     it 'sets the comic variable' do
       get :show, id: a_comic.id
       expect(assigns(:comic)).to eq(a_comic)
+    end
+
+    it "redirects to the homepage/rootpath if the comic isn't found" do
+      get :show, id: 100
+      expect(response).to redirect_to root_path
     end
   end
 

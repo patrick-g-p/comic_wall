@@ -19,6 +19,7 @@
 @import "header";
 @import "comic_page";
 @import "comic_wall";
+@import "discussion_page";
 
 * {
   -webkit-box-sizing: border-box;
@@ -47,11 +48,6 @@ html, body {
 
 #content-area {
   padding-bottom: 30px;
-}
-
-.row {
-  margin-right: 0px;
-  margin-left: 0px;
 }
 
 #sticky-footer  {

@@ -5,3 +5,17 @@
   max-width: 450px;
   height: auto;
 }
+
+#discussion-container {
+  margin-top: 25px;
+}
+
+#discussion-list {
+  list-style-type: none;
+
+  li {
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dadfe1;
+  }
+}
