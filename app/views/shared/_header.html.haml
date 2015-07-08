@@ -4,6 +4,7 @@
   .container-fluid
     .pull-right
       - if logged_in?
-        =link_to 'Logout', logout_path, class: 'btn btn-success navbar-btn navigation-buttons'
+        =link_to 'Your Account', user_path(current_user), class: 'btn btn-warning navbar-btn navigation-buttons'
+        =link_to 'Logout', logout_path, class: 'btn btn-danger navbar-btn navigation-buttons'
       -else
         =link_to 'Login', login_path, class: 'btn btn-success navbar-btn navigation-buttons'

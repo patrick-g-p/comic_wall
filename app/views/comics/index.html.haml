@@ -1,2 +1,8 @@
-- unless logged_in?
-  = link_to 'Register For An Account', new_user_path, class: 'btn btn-lg btn-primary'
+.row
+  .col-md-6.col-md-offset-3.centered
+    - if logged_in?
+      =link_to 'Add New Comic To The Wall', new_comic_path, class: 'btn btn-primary navbar-btn navigation-buttons'
+    - else
+      = link_to 'Register For An Account', new_user_path, class: 'btn btn-lg btn-primary'
+.row
+  .col-md-10.col-md-offset-1

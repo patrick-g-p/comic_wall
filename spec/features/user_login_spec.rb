@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-feature 'A user logs into their account' do
+feature 'Login' do
   let(:dick_grayson) {Fabricate(:user)}
 
-  scenario 'The user inputs the correct information' do
+  scenario 'User inputs valid account credentials' do
     login(dick_grayson)
     expect(page).to have_content('You. Are. Logged in.')
   end

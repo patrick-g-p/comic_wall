@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-feature 'A new Comic Wall user is registered' do
+feature 'Registration' do
   let(:a_new_user) {Fabricate.build(:user)}
 
-  scenario 'The future user inputs valid information' do
+  scenario 'A future user inputs all their information into the register form' do
     visit('/register')
     fill_in('Email', with: a_new_user.email)
     fill_in('Full Name', with: a_new_user.full_name)

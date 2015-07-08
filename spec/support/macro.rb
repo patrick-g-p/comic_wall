@@ -6,7 +6,7 @@ def current_user
   @current_user ||= User.find(session[:user_id]) if session[:user_id]
 end
 
-def clear_session
+def clear_user_from_session
   session[:user_id] = nil
 end
 

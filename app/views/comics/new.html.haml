@@ -1,0 +1,10 @@
+.row
+  .col-md-4.col-md-offset-4
+    .well
+      %h3.comicy-text Add a new comic to the wall!
+      %hr
+      = bootstrap_form_for @comic do |f|
+        = f.text_field :title, placeholder: 'The Amazing Spider-Man', label: 'Title/Series'
+        = f.number_field :issue_number, placeholder: '121', label: 'Issue #'
+        = f.url_field :cover_art_url, placeholder: 'https://upload.wikimedia.org/wikipedia/en/2/24/Asm121.jpg', help: "A quick google image or wikipedia search will handle this!", label: 'Cover Art URL'
+        = f.submit 'Submit Comic', class: 'btn btn-success'
