@@ -1,6 +1,12 @@
 .cover-art-links {
+  p {
+    font-size: 22px;
+    font-family: 'Bangers';
+    color: #000;
+  }
+
   &:hover{
-    text-decoration: none;
+    color: #000;
   }
 }
 
@@ -8,8 +14,19 @@
   padding: 5px;
   background-color: #dadfe1;
   width: 100%;
-  max-width: 375px;
+  max-width: 350px;
   height: auto;
-  display: inline-block;
-  margin: 10px 5px;
+}
+
+#comic-list {
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+  margin: 10px 0px;
+
+  li {
+    margin: 0px 25px;
+    padding: 10px;
+    display: inline-block;
+  }
 }

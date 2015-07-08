@@ -1,10 +1,15 @@
 .row
   .col-md-6.col-md-offset-3.centered
     - if logged_in?
-      =link_to 'Add New Comic To The Wall', new_comic_path, class: 'btn btn-primary navbar-btn navigation-buttons'
+      =link_to 'Add New Comic To The Wall', new_comic_path, class: 'btn btn-primary'
     - else
-      = link_to 'Register For An Account', new_user_path, class: 'btn btn-lg btn-primary'
-.centered
+      .well
+        %h3
+          Want to contribute to Comic Wall?
+          = link_to 'Register For An Account', new_user_path
+%ul#comic-list
   - @comics.each do |comic|
-    = link_to comic, class: 'cover-art-links' do
-      = image_tag comic.cover_art_url, class: 'comic-cover-sm'
+    %li
+      = link_to comic, class: 'cover-art-links' do
+        %p= "#{comic.title} ##{comic.issue_number}"
+        = image_tag comic.cover_art_url, class: 'comic-cover-sm'
