@@ -17,6 +17,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "header";
+@import "comic_page";
+@import "comic_wall";
 
 * {
   -webkit-box-sizing: border-box;
@@ -82,12 +84,4 @@ html, body {
 
 .centered {
   text-align: center;
-}
-
-.comic-cover {
-  border-radius: 0;
-  background-color: #f2f1ef;
-  width: 100%;
-  max-width: 450px;
-  height: auto;
 }

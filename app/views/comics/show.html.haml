@@ -1,8 +1,9 @@
 .row
   .col-md-6.col-md-offset-3.centered
     %h1.comicy-text= "#{@comic.title} ##{@comic.issue_number}"
-    = image_tag @comic.cover_art_url, class: 'well comic-cover'
-    %p=link_to 'Start a new discussion?', '#'
+    = image_tag @comic.cover_art_url, class: 'comic-cover-lg'
+    - if logged_in?
+      %p=link_to 'Start a new discussion?', '#'
 .row
   .col-md-6.col-md-offset-3.centered
     %h2 Discussions and stuff!

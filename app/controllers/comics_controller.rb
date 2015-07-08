@@ -2,7 +2,7 @@ class ComicsController < ApplicationController
   before_action :require_user, except: [:index, :show]
 
   def index
-
+    @comics = Comic.limit(8).order("RANDOM()")
   end
 
   def show

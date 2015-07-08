@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless logged_in?
-      flash[:danger] = 'You need to be logged in to do that!'
+      flash[:danger] = 'The Justice League put a stop to you, because you need to be logged in to do that!'
       redirect_to login_path
     end
   end

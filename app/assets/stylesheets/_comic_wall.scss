@@ -1,0 +1,15 @@
+.cover-art-links {
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.comic-cover-sm {
+  padding: 5px;
+  background-color: #dadfe1;
+  width: 100%;
+  max-width: 375px;
+  height: auto;
+  display: inline-block;
+  margin: 10px 5px;
+}
