@@ -24,9 +24,11 @@ describe ComicsController do
       expect(assigns(:comic)).to eq(a_comic)
     end
 
-    it "redirects to the homepage/rootpath if the comic isn't found" do
-      get :show, id: 100
-      expect(response).to redirect_to root_path
+    context 'with a bad url' do
+      it "redirects to the comic wall/rootpath if the comic isn't found" do
+        get :show, id: 42
+        expect(response).to redirect_to root_path
+      end
     end
   end
 

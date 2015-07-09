@@ -90,5 +90,16 @@ describe DiscussionsController do
     it 'sets the comic variable' do
       expect(assigns(:comic)).to eq(a_comic)
     end
+
+    it 'sets a new reply object to the reply variable' do
+      expect(assigns(:reply)).to be_a_new(Reply)
+    end
+
+    context 'with a bad url' do
+      it "redirects to the comic page if the discussion isn't found" do
+        get :show, comic_id: a_comic.id, id: 42
+        expect(response).to redirect_to comic_path(a_comic)
+      end
+    end
   end
 end
