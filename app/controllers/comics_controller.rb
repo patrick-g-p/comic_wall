@@ -7,7 +7,6 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params[:id])
-    @comic_discussions = @comic.discussions unless @comic.discussions.blank?
     rescue ActiveRecord::RecordNotFound
       flash[:warning] = "Sorry, that comic doesn't exist!"
       redirect_to root_path

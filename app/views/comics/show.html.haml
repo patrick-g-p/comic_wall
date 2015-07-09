@@ -10,9 +10,9 @@
     %p=link_to 'Return To The Wall', root_path
   .col-md-6.col-md-offset-3.well#discussion-container
     %h3 Discussions:
-    - if @comic_discussions
+    - unless @comic.discussions.blank?
       %ul#discussion-list
-        -@comic_discussions.each do |discussion|
+        -@comic.discussions.each do |discussion|
           %li
             %h3
               = link_to "#{discussion.title}", comic_discussion_path(@comic, discussion)
