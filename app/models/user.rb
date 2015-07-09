@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :discussions
+  has_many :replies
 
   has_secure_password validations: false
   validates :email, presence: true, uniqueness: true

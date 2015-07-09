@@ -18,9 +18,10 @@
           = yield
       %footer#sticky-footer
         .pull-left.comicy-text
+          &copy
+          = "#{Time.now.year}"
           = link_to '#comic-wall-logo', class: 'comicy-text', title: 'Jump back to the top!' do
-            &copy
-            = "#{Time.now.year} Comic Wall"
+            Comc Wall
         .pull-right
           =link_to "https://github.com/patrick-g-pavesi/comic_wall", class: 'comicy-text' do
             Source < > on

@@ -8,7 +8,7 @@ feature 'Comic Creation' do
   end
 
   scenario 'User adds a new comic to the wall' do
-    click_on('Add New Comic To The Wall')
+    click_on('Add A New Comic To The Wall')
 
     expect(page).to have_content('Add a new comic to the wall!')
     fill_in('Title/Series', with: new_comic[:title])

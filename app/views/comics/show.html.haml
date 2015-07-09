@@ -1,12 +1,15 @@
 .row
-  .col-md-6.col-md-offset-3.centered
+  .col-md-6.col-md-offset-3.centered#comic-info
     %h1.comicy-text= "#{@comic.title} ##{@comic.issue_number}"
     = image_tag @comic.cover_art_url, class: 'comic-cover-lg'
 .row
   .col-md-6.col-md-offset-3.centered
     - if logged_in?
       %h2=link_to 'Begin A Discussion', new_comic_discussion_path(@comic)
+      or
+    %p=link_to 'Return To The Wall', root_path
   .col-md-6.col-md-offset-3.well#discussion-container
+    %h3 Discussions:
     - if @comic_discussions
       %ul#discussion-list
         -@comic_discussions.each do |discussion|

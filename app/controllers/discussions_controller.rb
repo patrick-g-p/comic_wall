@@ -22,6 +22,7 @@ class DiscussionsController < ApplicationController
 
   def show
     @discussion = Discussion.find(params[:id])
+    @reply = Reply.new
     rescue ActiveRecord::RecordNotFound
       flash[:warning] = "Sorry, that discussion doesn't exist!"
       redirect_to comic_path(@comic)

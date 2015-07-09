@@ -13,5 +13,10 @@
     %p= @discussion.body
 .row
   .col-md-6.col-md-offset-1.well#reply_area
+    - if logged_in?
+      = bootstrap_form_for '#' do |f|
+        = f.text_area :body, label: 'Your Reply:', id: 'reply-text-area', rows: '5'
+        = f.submit 'Submit', class: 'btn btn-info'
+      %hr
     %h4 Replies:
     -# add replies after specs and implementation is written
