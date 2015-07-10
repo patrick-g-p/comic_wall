@@ -6,7 +6,7 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     = csrf_meta_tag
     = stylesheet_link_tag "application"
-    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Bangers|Droid+Sans"
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Bangers|Droid+Sans"
     = javascript_include_tag "application"
   %body
     #wrapper
@@ -21,7 +21,7 @@
           &copy
           = "#{Time.now.year}"
           = link_to '#comic-wall-logo', class: 'comicy-text', title: 'Jump back to the top!' do
-            Comc Wall
+            Comic Wall
         .pull-right
           =link_to "https://github.com/patrick-g-pavesi/comic_wall", class: 'comicy-text' do
             Source < > on
