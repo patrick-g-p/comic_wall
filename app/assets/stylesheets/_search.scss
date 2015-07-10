@@ -1,0 +1,16 @@
+#search-list {
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.comic-cover-search {
+  padding: 5px;
+  margin: 10px;
+  background-color: #dadfe1;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}

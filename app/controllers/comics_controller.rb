@@ -1,5 +1,5 @@
 class ComicsController < ApplicationController
-  before_action :require_user, except: [:index, :show]
+  before_action :require_user, only: [:new, :create]
 
   def index
     @comics = Comic.limit(8).order("RANDOM()")
@@ -26,6 +26,10 @@ class ComicsController < ApplicationController
       flash[:danger] = "Not so fast Flash! There were some errors."
       render :new
     end
+  end
+
+  def search
+    @search_results = Comic.search_by_title(params[:search])
   end
 
   private

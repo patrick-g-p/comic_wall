@@ -88,4 +88,18 @@ describe ComicsController do
       let(:action) {post :create, comic: Fabricate.attributes_for(:comic)}
     end
   end
+
+  describe 'GET search' do
+    let!(:a_comic) {Fabricate(:comic, title: 'Batman')}
+
+    it "populates the search_results variable if there's a match" do
+      get :search, search: 'Batman'
+      expect(assigns(:search_results)).to eq([a_comic])
+    end
+
+    it 'the search_results variable is still set if there is no match' do
+      get :search, search: 'Superman'
+      expect(assigns(:search_results)).to eq([])
+    end
+  end
 end

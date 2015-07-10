@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   resources :comics, except: [:destroy] do
+    collection do
+      get '/search', to: 'comics#search'
+    end
+
     resources :discussions, except: [:index, :edit, :update] do
       resources :replies, only: [:create]
     end

@@ -1,0 +1,8 @@
+.row
+  .col-md-10.col-md-offset-1
+    %ul#search-list
+      - @search_results.each do |comic|
+        %li
+          = link_to comic, class: 'cover-art-links' do
+            %p= "#{comic.title} ##{comic.issue_number}"
+            = image_tag comic.cover_art_url, class: 'comic-cover-search'

@@ -2,6 +2,10 @@
   %h1= link_to "Comic Wall - 'With great comics comes great discussions.'", root_path, id: 'comic-wall-logo'
 %nav.navbar.navbar-default#top-navbar-custom
   .container-fluid
+    .pull-left#search-form-container
+      = bootstrap_form_tag url: search_comics_path, method: :get, layout: :inline do |f|
+        = f.text_field :search, placeholder: 'Spider-Man, Batman, ...', hide_label: true, id: 'search-bar'
+        = f.submit 'Comic Search'
     .pull-right
       - if logged_in?
         =link_to 'Your Account', user_path(current_user), class: 'btn btn-warning navbar-btn navigation-buttons'
