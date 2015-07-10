@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get '/search', to: 'comics#search'
     end
 
-    resources :discussions, except: [:index, :edit, :update] do
+    resources :discussions, only: [:new, :create, :show] do
       resources :replies, only: [:create]
     end
   end

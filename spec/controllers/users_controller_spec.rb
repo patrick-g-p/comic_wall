@@ -42,4 +42,16 @@ describe UsersController do
     end
   end
 
+  describe 'GET show' do
+    it 'sets the user variable' do
+      crono = Fabricate(:user)
+      get :show, id: crono.id
+      expect(assigns(:user)).to eq(crono)
+    end
+
+    it "redirects to the comic wall/root path when the user isn't found" do
+      get :show, id: 42
+      expect(response).to redirect_to root_path
+    end
+  end
 end

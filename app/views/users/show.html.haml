@@ -1,0 +1,10 @@
+.row
+  .col-md-6.col-md-offset-3
+    .well
+      %h2.centered.comicy-text= @user.full_name.titleize
+      %h3= "#{@user.replies.count} Replies Contributed"
+      %hr
+      %h4 Discussions Created
+      %ul
+        - @user.discussions.each do |discussion|
+          %li= link_to "#{discussion.title}", comic_discussion_path(discussion.comic, discussion)

@@ -16,6 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    # @discussions_contributed_to = Discussion.joins(:replies).where(user_id: params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:warning] = "Sorry, that user doesn't exist!"
+      redirect_to root_path
+  end
+
   private
 
   def user_params
