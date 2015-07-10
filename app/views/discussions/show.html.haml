@@ -1,6 +1,6 @@
 .row
   .col-md-6.col-md-offset-1#discussion-header
-    = render 'shared/add_to_list_link', msg: 'Add this comic to your reading list?'
+    = render 'shared/add_to_list_link', msg: 'Add this comic to your reading list?' if logged_in?
     %h2.comicy-text
       = @comic.title
       .pull-right
