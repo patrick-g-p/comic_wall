@@ -1,5 +1,5 @@
 class Comic < ActiveRecord::Base
-  has_many :discussions
+  has_many :discussions, -> { order('reply_count DESC') }
 
   validates_presence_of :title
   validates_presence_of :issue_number

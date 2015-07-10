@@ -19,3 +19,5 @@ Comic.create!(title: 'The Amazing Spider-Man(vol. 2)', issue_number: 129, cover_
 Comic.create!(title: 'X-Men(vol. 2)', issue_number: 53, cover_art_url: 'http://img1.wikia.nocookie.net/__cb20060619191040/marveldatabase/images/thumb/9/95/X-Men_Vol_2_53.jpg/300px-X-Men_Vol_2_53.jpg')
 
 Comic.create!(title: 'Iron Man', issue_number: 1, cover_art_url: 'http://img1.wikia.nocookie.net/__cb20051102174308/marveldatabase/images/thumb/3/30/Iron_Man_Vol_1_1.jpg/300px-Iron_Man_Vol_1_1.jpg')
+
+Comic.create!(title: 'The Crow', issue_number: 1, cover_art_url: 'https://upload.wikimedia.org/wikipedia/en/8/85/The_Crow1_Cover.jpg')

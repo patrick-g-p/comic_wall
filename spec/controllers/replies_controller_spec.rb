@@ -21,6 +21,10 @@ describe RepliesController do
         expect(Reply.all.count).to eq(1)
       end
 
+      it 'incresases the discussions reply count' do
+        expect(active_discussion.reload.reply_count).to eq(1)
+      end
+
       it 'associates the reply with the current user' do
         expect(Reply.first.creator).to eq(current_user)
       end

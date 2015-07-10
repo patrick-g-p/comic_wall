@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Comic do
-  it { should have_many(:discussions) }
+  it { should have_many(:discussions).order('reply_count DESC') }
 
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:issue_number) }

@@ -16,7 +16,7 @@
           %li
             %h3
               = link_to "#{discussion.title}", comic_discussion_path(@comic, discussion)
-              -# todo: total replies here
+              = "- #{discussion.reply_count} Replies"
             %small
               Posted By -
               = link_to "#{discussion.creator.full_name}", user_path(discussion.creator)
