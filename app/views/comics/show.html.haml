@@ -1,4 +1,7 @@
 .row
+  - if logged_in?
+    .col-md-6.col-md-offset-3.centered
+      = render 'shared/add_to_list_link', msg: "Add #{@comic.title} to your reading list?"
   .col-md-6.col-md-offset-3.centered#comic-info
     %h1.comicy-text= "#{@comic.title} ##{@comic.issue_number}"
     = image_tag @comic.cover_art_url, class: 'comic-cover-lg'
@@ -19,7 +22,7 @@
               = "- #{discussion.reply_count} Replies"
             %small
               Posted By -
-              = link_to "#{discussion.creator.full_name}", user_path(discussion.creator)
+              = link_to "#{discussion.contributers_name}", user_path(discussion.creator)
               = "on #{discussion.created_at}"
     - else
       %h3 No discussions yet! Post the first one!

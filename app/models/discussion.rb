@@ -5,4 +5,8 @@ class Discussion < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :body
+
+  def contributers_name
+    creator.full_name
+  end
 end

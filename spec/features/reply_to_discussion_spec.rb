@@ -9,14 +9,14 @@ feature 'Adding a reply' do
 
   scenario 'User adds a reply to an in progress discussion' do
     login(tim_drake)
-    click_comic_on_wall
+    click_comic_on_wall(a_comic)
     click_discussion_link
     type_out_and_submit_reply
     reply_added
   end
 
-  def click_comic_on_wall
-    find("a[href='/comics/#{a_comic.id}']").click
+  def click_comic_on_wall(comic)
+    find("a[href='#{comic_path(comic)}']").click
     expect(page).to have_content("Discussions:")
   end
 

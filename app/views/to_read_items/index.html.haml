@@ -1,0 +1,23 @@
+.row
+  .col-md-6.col-md-offset-3
+    %header#comic-table-header
+      %h2.comicy-text Your Reading List:
+    = bootstrap_form_tag url: reading_list_path do
+      %table#comic-table
+        %thead
+          %tr
+            %th(width="5%") List Order
+            %th(width="15%") Title
+            %th(width="15%") Issue #
+            %th(width="5%")Remove
+        %tbody
+          - @to_read_items.each do |item|
+            %tr
+              = hidden_field_tag 'to_read_items[][id]', item.id
+              %td= text_field_tag 'to_read_items[][list_position]', item.list_position, data: {comic_id: item.comic.id}
+              %td= link_to item.comic.title, item.comic, class: 'comicy-text'
+              %td.comicy-text= "##{item.comic.issue_number}"
+              %td
+                = link_to item, method: :delete do
+                  %i.fa.fa-times
+      = submit_tag 'Update List', class: 'btn btn-lg btn-success', id: 'update-button'

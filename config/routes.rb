@@ -17,4 +17,8 @@ Rails.application.routes.draw do
       resources :replies, only: [:create]
     end
   end
+
+  resources :to_read_items, only: [:create, :destroy]
+  get '/reading_list', to: 'to_read_items#index'
+  post '/reading_list', to: 'to_read_items#update_list'
 end

@@ -1,0 +1,37 @@
+#update-button {
+  display: block;
+  margin: 20px auto;
+  font-size: 25px;
+}
+
+#comic-table {
+  display: block;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 15px;
+
+  th, td {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  th {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+  }
+
+  td {
+    padding-top: 10px;
+
+    input[type="text"] {
+      width: 50px;
+    }
+  }
+}
+
+#comic-table-header {
+  margin-bottom: 25px;
+
+  h2 {
+    text-decoration: underline;
+  }
+}

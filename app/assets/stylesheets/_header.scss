@@ -34,4 +34,9 @@
 #search-form-container {
   position: relative;
   top: 8px;
+
+  input[type='submit'] {
+    margin-left: 5px;
+    font-weight: bold;
+  }
 }

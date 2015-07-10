@@ -1,5 +1,6 @@
 .row
   .col-md-6.col-md-offset-1#discussion-header
+    = render 'shared/add_to_list_link', msg: 'Add this comic to your reading list?'
     %h2.comicy-text
       = @comic.title
       .pull-right
@@ -9,7 +10,7 @@
       %br
     %small
       Posted By -
-      = link_to "#{@discussion.creator.full_name}", user_path(@discussion.creator)
+      = link_to "#{@discussion.contributers_name}", user_path(@discussion.creator)
       = "on #{@discussion.created_at}"
     %p= @discussion.body
 .row
@@ -27,5 +28,5 @@
             %p= reply.body
             %small
               Posted by:
-              = link_to "#{reply.creator.full_name}", user_path(reply.creator)
+              = link_to "#{reply.contributers_name}", user_path(reply.creator)
               = "on #{reply.created_at}"

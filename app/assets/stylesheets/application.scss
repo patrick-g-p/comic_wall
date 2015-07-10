@@ -21,6 +21,7 @@
 @import "comic_wall";
 @import "discussion_page";
 @import "search";
+@import "reading_list";
 
 * {
   -webkit-box-sizing: border-box;
@@ -81,4 +82,8 @@ html, body {
 
 .centered {
   text-align: center;
+}
+
+#reading-list-button {
+  margin-bottom: 20px;
 }

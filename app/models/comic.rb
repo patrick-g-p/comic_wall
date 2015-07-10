@@ -11,4 +11,7 @@ class Comic < ActiveRecord::Base
     self.where("LOWER(title) LIKE ?", "%#{search.downcase}%" ).order(:title)
   end
 
+  # def number_of_discussions
+  #   discussions.count
+  # end
 end
